@@ -1,0 +1,32 @@
+<%- include("./partials/header") %>
+
+	<div class="container">
+		<header class="jumbotron">
+				<h1 id="header"><i class="fa fa-camera-retro"></i> TASVEER</h1>
+				<p>The best thing about memories is making them.</p>
+				<p>
+					<a class="btn btn-primary btn-lg" href="/pictures/new">Add New Image</a>
+				</p>
+
+		</header>
+		<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+			<% pics.forEach(function(pictures){ %>
+			<div class = "Col-md-3 col-sm-4">
+				<div class="thumbnail">
+					<img class="img-responsive" src= "<%= pictures.image%>" >
+					<div class="capton">
+						<h4><%= pictures.name %></h4>
+					</div>
+					<form  action="/pictures/<%= pictures._id %>?_method=DELETE" method="POST">
+							<button class="btn btn-danger">Delete</button>											 
+				 	</form>
+				</div>
+			</div>
+
+			<% }); %>
+
+		</div>
+
+	</div>
+	
+<%- include("./partials/footer") %>
