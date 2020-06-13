@@ -6,7 +6,7 @@ var express     = require("express"),
 	User        = require("./models/user"),
 	passport    = require("passport"),
 	LocalStrategy = require("passport-local"),
-	Port          = process.env.PORT || 3000
+	PORT         = process.env.PORT || 3000
 
 
 var pictureRoutes    = require("./routes/pics"),
