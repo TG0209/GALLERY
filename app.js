@@ -23,6 +23,10 @@ app.use(methodOverride("_method"));
 
 // passport config
 app.use(require("cookie-session")({
+	cookie:{
+    secure: true,
+    maxAge:60000
+       },
 	secret:"fuck off",
 	resave:false,
 	saveUninitialized:false,
