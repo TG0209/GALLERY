@@ -22,7 +22,7 @@ app.set("view engine","ejs");
 app.use(methodOverride("_method"));
 
 // passport config
-app.use(require("express-session")({
+app.use(require("cookie-session")({
 	secret:"fuck off",
 	resave:false,
 	saveUninitialized:false,
