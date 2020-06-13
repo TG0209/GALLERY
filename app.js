@@ -12,7 +12,9 @@ var pictureRoutes    = require("./routes/pics"),
 	indexRoutes      = require("./routes/index")
     
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb://localhost/photo_data", {useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost/photo_data", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://yelpcamp:tushar@cluster0-ktyjf.mongodb.net/gallery?retryWrites=true&w=majority", {useNewUrlParser: true,
+ useCreateIndex : true});
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));

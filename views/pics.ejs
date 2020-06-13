@@ -11,15 +11,19 @@
 		</header>
 		<div class="row text-center" style="display:flex; flex-wrap: wrap;">
 			<% pics.forEach(function(pictures){ %>
-			<div class = "Col-md-3 col-sm-4">
+			<div class = "Col-md-3 col-sm-3">
 				<div class="thumbnail">
 					<img class="img-responsive" src= "<%= pictures.image%>" >
 					<div class="capton">
 						<h4><%= pictures.name %></h4>
-					</div>
-					<form  action="/pictures/<%= pictures._id %>?_method=DELETE" method="POST">
-							<button class="btn btn-danger">Delete</button>											 
-				 	</form>
+				
+					
+						<form  action="/pictures/<%= pictures._id %>?_method=DELETE" method="POST">
+							<button  class="btn btn-danger">Delete</button>
+						</form>
+					
+						</div>
+	
 				</div>
 			</div>
 
@@ -28,5 +32,5 @@
 		</div>
 
 	</div>
-	
+
 <%- include("./partials/footer") %>

@@ -5,7 +5,7 @@ var User = require("../models/user");
 
 
 router.get("/",function(req,res){
-	res.render("pics");
+	res.render("landing");
 })
 
 // Auth routes
