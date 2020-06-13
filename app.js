@@ -5,7 +5,8 @@ var express     = require("express"),
 	methodOverride = require("method-override"),
 	User        = require("./models/user"),
 	passport    = require("passport"),
-	LocalStrategy = require("passport-local")
+	LocalStrategy = require("passport-local"),
+	Port          = process.env.PORT || 3000
 
 
 var pictureRoutes    = require("./routes/pics"),
@@ -45,6 +46,6 @@ passport.deserializeUser(User.deserializeUser());
 app.use("/", indexRoutes);
 app.use("/pictures",pictureRoutes);
 
-app.listen(3000,function(){
+app.listen(PORT,function(){
 	console.log("sever started!!");
 });
